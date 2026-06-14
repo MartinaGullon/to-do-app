@@ -49,6 +49,11 @@
                             <i class="bi bi-calendar3"></i> Calendario
                         </button>
                     </li>
+                    <li class="nav-item">
+                        <button class="nav-btn" id="btn-tema" aria-label="Cambiar tema">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -60,8 +65,10 @@
         <section id="vista-inicio" class="vista">
 
             <header class="vista-header">
-                <h1>Buen día <span id="saludo-hora"></span></h1>
-                <p class="text-muted" id="fecha-hoy"></p>
+                <h1 id="saludo-hora"></h1>
+                <div class="info-dia">
+                    <span id="fecha-hoy"></span>
+                </div>
             </header>
 
             <!-- FORMULARIO NUEVA TAREA -->
@@ -71,12 +78,19 @@
                         <i class="bi bi-plus-circle"></i> Nueva tarea
                     </h2>
                     <div class="row g-3">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-5">
                             <input type="text" id="input-tarea" class="form-control"
                                 placeholder="¿Qué tenés que hacer?" />
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <input type="date" id="input-fecha" class="form-control" />
+                            <div id="error-fecha" class="invalid-feedback">
+                                Por favor seleccioná una fecha.
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <input type="time" id="input-hora" class="form-control" />
+                            <div class="form-text">Horario (opcional)</div>
                         </div>
                         <div class="col-12 col-md-2">
                             <button id="btn-agregar" class="btn btn-primary w-100">
@@ -92,9 +106,7 @@
                 <h2 class="h5 mb-3">
                     <i class="bi bi-calendar-check"></i> Tareas para hoy
                 </h2>
-                <div id="tareas-hoy">
-                    <!-- Se genera desde JavaScript -->
-                </div>
+                <div id="tareas-hoy"></div>
                 <div id="sin-tareas-hoy" class="text-center py-4 d-none">
                     <i class="bi bi-sun fs-1 text-muted"></i>
                     <p class="text-muted mt-2">No tenés tareas para hoy. ¡Buen momento para agregar una!</p>
@@ -165,7 +177,7 @@
 
     </main>
 
-    <footer class="text-center py-4 text-muted border-top">
+    <footer class="text-center py-4 border-top">
         <p class="mb-0">Sitio creado por Martina Gullón — 2026</p>
     </footer>
 

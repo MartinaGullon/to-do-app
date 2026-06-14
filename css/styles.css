@@ -65,6 +65,11 @@ body {
     color: var(--text-muted) !important;
 }
 
+.form-text {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
 .card {
     background-color: var(--bg-card) !important;
     border-color: var(--border) !important;
@@ -220,6 +225,18 @@ main {
     color: #c0392b;
 }
 
+/* ===== VALIDACIÓN ===== */
+.is-invalid {
+    border-color: #c0392b !important;
+}
+
+.invalid-feedback {
+    color: #c0392b;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
 /* ===== CALENDARIO ===== */
 .calendario-dias-semana {
     display: grid;
@@ -262,22 +279,83 @@ main {
     font-weight: 700;
 }
 
-.calendario-dia.tiene-tareas::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: var(--primary);
-}
-
-.calendario-dia.hoy.tiene-tareas::after {
-    background-color: #faf7f4;
-}
-
 .calendario-dia.otro-mes {
     color: var(--border);
+}
+
+.dia-numero {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.dia-badge {
+    font-size: 0.65rem;
+    background-color: var(--primary);
+    color: #faf7f4;
+    border-radius: 10px;
+    padding: 1px 5px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.calendario-dia.hoy .dia-badge {
+    background-color: #faf7f4;
+    color: var(--primary);
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 1rem;
+}
+
+.modal-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 480px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.btn-cerrar-modal:hover {
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 1.25rem 1.5rem;
 }
 
 /* ===== FOOTER ===== */
@@ -300,4 +378,110 @@ footer {
     .tarea-card {
         padding: 0.75rem 1rem;
     }
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark {
+    --bg: #1e1a18;
+    --bg-card: #2a2420;
+    --text-primary: #f0ebe6;
+    --text-muted: #a89890;
+    --border: #3d3330;
+}
+
+body.dark .navbar {
+    background-color: var(--bg-card) !important;
+}
+
+body.dark .card {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.dark .form-control {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+body.dark .btn-outline-secondary {
+    border-color: var(--border) !important;
+    color: var(--text-muted) !important;
+}
+
+body.dark .nav-btn {
+    color: var(--text-muted);
+}
+
+body.dark .nav-btn:hover,
+body.dark .nav-btn.active {
+    background-color: #3d3330;
+    color: #d4b8a8;
+}
+
+body.dark .badge-hora {
+    background-color: #3d3330;
+    color: #d4b8a8;
+}
+
+body.dark .text-muted {
+    color: #c9b5a8 !important;
+}
+
+body.dark .tarea-nombre {
+    color: #f0ebe6;
+}
+
+body.dark .tarea-fecha {
+    color: #c9b5a8;
+}
+
+body.dark .calendario-dia {
+    color: #f0ebe6;
+}
+
+body.dark .calendario-dia.hoy {
+    color: #faf7f4;
+}
+
+body.dark .calendario-dia.otro-mes {
+    color: #5a4a42;
+}
+
+body.dark .calendario-dia:hover {
+    background-color: #3d3330;
+    color: #f0ebe6;
+}
+
+body.dark .card-title {
+    color: #f0ebe6;
+}
+
+body.dark #titulo-calendario {
+    color: #f0ebe6;
+}
+
+body.dark .vista-header h1 {
+    color: #f0ebe6;
+}
+
+body.dark h2 {
+    color: #f0ebe6;
+}
+
+body.dark .modal-card {
+    background-color: var(--bg-card);
+    border-color: var(--border);
+}
+
+body.dark .modal-header h3 {
+    color: #f0ebe6;
+}
+
+body.dark .invalid-feedback {
+    color: #e07070;
+}
+
+body.dark .form-text {
+    color: #a89890;
 }
