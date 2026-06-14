@@ -1,0 +1,303 @@
+/* ===== VARIABLES ===== */
+:root {
+    --primary: #a0826d;
+    --primary-hover: #8b6f5e;
+    --bg: #f2ebe4;
+    --bg-card: #faf7f4;
+    --text-primary: #3d2f28;
+    --text-muted: #9c8478;
+    --border: #ddd0c8;
+    --success: #7a9e7e;
+    --radius: 10px;
+    --transition: 0.2s ease;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ===== SOBREESCRIBIR BOOTSTRAP ===== */
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #faf7f4 !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border) !important;
+    color: var(--text-muted) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary.active {
+    background-color: #ede5df !important;
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+.form-control {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(160, 130, 109, 0.25) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-muted) !important;
+}
+
+.card {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-primary) !important;
+}
+
+.brand-dot {
+    color: var(--primary);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+    background-color: #ede5df;
+    color: var(--primary);
+}
+
+.nav-btn.active {
+    background-color: #ede5df;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* ===== MAIN ===== */
+main {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    max-width: 800px;
+}
+
+/* ===== VISTAS ===== */
+.vista-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.vista-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===== SALUDO E INFO DEL DÍA ===== */
+.info-dia {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+}
+
+.badge-hora {
+    background-color: #ede5df;
+    color: var(--primary);
+    font-size: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* ===== TARJETAS DE TAREA ===== */
+.tarea-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: box-shadow var(--transition);
+}
+
+.tarea-card:hover {
+    box-shadow: 0 2px 8px rgba(160, 130, 109, 0.15);
+}
+
+.tarea-card.completada {
+    opacity: 0.6;
+}
+
+.tarea-card.completada .tarea-nombre {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.tarea-check {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--success);
+    flex-shrink: 0;
+}
+
+.tarea-info {
+    flex: 1;
+}
+
+.tarea-nombre {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+    color: var(--text-primary);
+}
+
+.tarea-fecha {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tarea-fecha.vencida {
+    color: #c0392b;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+    background-color: #f5e6e6;
+    color: #c0392b;
+}
+
+/* ===== CALENDARIO ===== */
+.calendario-dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.calendario-grilla {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendario-dia {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    padding: 4px;
+    color: var(--text-primary);
+}
+
+.calendario-dia:hover {
+    background-color: #ede5df;
+}
+
+.calendario-dia.hoy {
+    background-color: var(--primary);
+    color: #faf7f4;
+    font-weight: 700;
+}
+
+.calendario-dia.tiene-tareas::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.calendario-dia.hoy.tiene-tareas::after {
+    background-color: #faf7f4;
+}
+
+.calendario-dia.otro-mes {
+    color: var(--border);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding-top: 4.5rem;
+    }
+
+    .vista-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .tarea-card {
+        padding: 0.75rem 1rem;
+    }
+}
