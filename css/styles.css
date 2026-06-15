@@ -424,6 +424,10 @@ body.dark .badge-hora {
     color: #d4b8a8;
 }
 
+body.dark .badge-hora .bi {
+    color: #d4b8a8 !important;
+}
+
 body.dark .text-muted {
     color: #c9b5a8 !important;
 }
@@ -434,6 +438,10 @@ body.dark .tarea-nombre {
 
 body.dark .tarea-fecha {
     color: #c9b5a8;
+}
+
+body.dark .tarea-fecha .bi {
+    color: #c9b5a8 !important;
 }
 
 body.dark .calendario-dia {
@@ -457,6 +465,10 @@ body.dark .card-title {
     color: #f0ebe6;
 }
 
+body.dark .card-title .bi {
+    color: #f0ebe6 !important;
+}
+
 body.dark #titulo-calendario {
     color: #f0ebe6;
 }
@@ -467,6 +479,10 @@ body.dark .vista-header h1 {
 
 body.dark h2 {
     color: #f0ebe6;
+}
+
+body.dark h2 .bi {
+    color: #f0ebe6 !important;
 }
 
 body.dark .modal-card {
@@ -484,4 +500,17 @@ body.dark .invalid-feedback {
 
 body.dark .form-text {
     color: #a89890;
+}
+
+body.dark .navbar-toggler {
+    border-color: #a89890 !important;
+}
+
+body.dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.dark input[type="date"]::-webkit-calendar-picker-indicator,
+body.dark input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
